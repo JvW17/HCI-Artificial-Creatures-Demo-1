@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Artificial Creatures demo 1 - Justin van Wijk</title>
+    <meta name="viewport" content="width=device-width">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="scripts/main.js" defer></script>
+  </head>
+  <body>
+    <a-scene background="color: #F7F9FA">
+      <a-assets>
+          <img id="industrieTekstuur" src="https://cdn.glitch.com/4fa6e8f9-5ad3-4a4f-a88c-6f26f22f9b32%2FindustrieTekstuur.jpg?v=1591982816410" />
+          <img id="industrieTekstuur2" src="https://cdn.glitch.com/4fa6e8f9-5ad3-4a4f-a88c-6f26f22f9b32%2FindustrieTekstuur2.jpg?v=1591983082575" />
+        <img id="hartjes" src="https://cdn.glitch.com/4fa6e8f9-5ad3-4a4f-a88c-6f26f22f9b32%2Fhartjes.png?v=1591986577322" />
+
+
+      </a-assets>
+
+      <a-camera>
+        <a-entity id="mouseCursor"
+          cursor="fuse: true; fuseTimeout: 1">
+        </a-entity>
+        <a-ring id="cursorRing"
+          position="0 0 -1"
+          radius-inner= "0.01"
+          radius-outer= "0.02"
+          material="color: limegreen; shader: flat">
+        </a-ring>
+      </a-camera>
+
+      <a-box id="rechterVoet"
+        position="-2 -2 -8"
+        rotation="0 0 0"
+        width="2"
+        height="1"
+        depth="1"
+        color="#9296AE"
+        shadow>
+      </a-box>
+
+      <a-box id="linkerVoet"
+        position="2 -2 -8"
+        rotation="0 0 0"
+        width="2"
+        height="1"
+        depth="1"
+        color="#9296AE"
+        shadow>
+      </a-box>
+
+      <a-box id="rechterBeen"
+        position="-1.5 -0.5 -8"
+        rotation="0 0 0"
+        width="1"
+        height="2"
+        depth="1"
+        color="#303136"
+        shadow>
+      </a-box>
+
+      <a-box id="linkerBeen"
+        position="1.5 -0.5 -8"
+        rotation="0 0 0"
+        width="1"
+        height="2"
+        depth="1"
+        color="#303136"
+        shadow>
+      </a-box>
+
+      <a-box id="borst"
+        position="0 2 -8"
+        rotation="0 0 0"
+        width="4"
+        height="3"
+        depth="1"
+        color="#BBD043"
+        shadow>
+      </a-box>
+
+      <a-box id="nek"
+        position="0 3.85 -8.1"
+        rotation="0 0 0"
+        width="1"
+        height="0.7"
+        depth="1"
+        color="#9296AE"
+        shadow>
+      </a-box>
+
+      <a-box id="hoofd"
+        position="0 5 -8"
+        rotation="0 0 0"
+        width="3"
+        height="2"
+        depth="1"
+        color="#9296AE"
+        shadow
+        animation__mouseenterkleur="
+                              property: components.material.material.color;
+                              type: color;
+                              to: hotpink;
+                              startEvents: mouseenter;
+                              dur: 500;"
+
+                  animation__mouseleavekleur="
+                              property: components.material.material.color;
+                              type: color;
+                              to: #9296AE;
+                              startEvents: mouseleave;
+                              dur: 500;"
+
+
+
+        >
+      </a-box>
+
+      <a-box id="linkerOor"
+        position="1.5 5 -8.25"
+        rotation="0 0 90"
+        width="1"
+        height="0.5"
+        depth="1"
+        color="#BC4A36"
+        shadow
+        animation="property: rotation;
+                   to: 360 0 90;
+                   dur: 9000;
+                   easing: linear;
+                   loop: true"
+        >
+      </a-box>
+
+      <a-box id="rechterOor"
+        position="-1.5 5 -8.25"
+        rotation="0 0 90"
+        width="1"
+        height="0.5"
+        depth="1"
+        color="#BC4A36"
+        shadow
+        animation="property: rotation;
+                   to: 360 0 90;
+                   dur: 9000;
+                   easing: linear;
+                   loop: true"
+        >
+      </a-box>
+
+      <a-cylinder id="rechterOog"
+        position="-0.75 5.25 -8"
+        rotation="90 0 0"
+        radius="0.4"
+        width="0.3"
+        height="1"
+        depth="1"
+        color="#BE1E0F"
+        shadow
+        animation="property: position;
+                   to: -0.75 5.25 -7.7;
+                   dur: 2000;
+                   easing: easeInOutSine;
+                   loop: -1"
+        >
+      </a-cylinder>
+
+      <a-cylinder id="linkerOog"
+        position="0.75 5.25 -7.7"
+        rotation="90 0 0"
+        radius="0.4"
+        width="0.3"
+        height="1"
+        depth="1"
+        color="#BE1E0F"
+        shadow
+        animation="property: position;
+                   to: 0.75 5.25 -7.9;
+                   dur: 3000;
+                   easing: easeInOutSine;
+                   loop: -1"
+        >
+      </a-cylinder>
+
+      <a-box id="mond"
+        position="0 4.5 -7.9"
+        rotation="0 0 0"
+        width="1"
+        height="0.3"
+        depth="1"
+        color="#F4F2EE"
+        shadow>
+      </a-box>
+
+      <a-box id="linkerArm"
+        position="3 2.5 -8"
+        rotation="0 0 0"
+        width="2"
+        height="0.7"
+        depth="1"
+        color="#303136"
+        shadow>
+      </a-box>
+
+      <a-box id="rechterArm"
+        position="-3 2.5 -8"
+        rotation="0 0 0"
+        width="2"
+        height="0.7"
+        depth="1"
+        color="#303136"
+        shadow>
+      </a-box>
+
+      <a-box id="linkerHand"
+        position="4.5 2.5 -8"
+        rotation="0 0 0"
+        width="0.5"
+        height="1"
+        depth="1"
+        color="#9296AE"
+        shadow>
+      </a-box>
+
+      <a-box id="rechterHand"
+        position="-4.5 2.5 -8"
+        rotation="0 0 0"
+        width="0.5"
+        height="1"
+        depth="1"
+        color="#9296AE"
+        shadow>
+      </a-box>
+
+      <a-box id="linkerAntenne"
+        position="0.7 6 -8.2"
+        rotation="0 0 0"
+        width="0.5"
+        height="1.5"
+        depth="1"
+        color="#E0B626"
+        shadow>
+      </a-box>
+
+      <a-box id="rechterAntenne"
+        position="-0.7 6 -8.2"
+        rotation="0 0 0"
+        width="0.5"
+        height="1.5"
+        depth="1"
+        color="#E0B626"
+        shadow>
+      </a-box>
+
+      <a-box id="borstKlein"
+        position="0 2 -7.9"
+        rotation="0 0 0"
+        width="3"
+        height="2"
+        depth="1"
+        material="src:#hartjes"
+
+             animation__mouseenterkleur="
+                              property: components.material.material.color;
+                              type: color;
+                              to: hotpink;
+                              startEvents: mouseenter;
+                              dur: 500;"
+
+                  animation__mouseleavekleur="
+                              property: components.material.material.color;
+                              type: color;
+                              to: white;
+                              startEvents: mouseleave;
+                              dur: 500;"
+
+        >
+      </a-box>
+
+      <a-plane id="ground"
+        position="0 -4 -4"
+        rotation="-90 0 0"
+        width="100"
+        height="100"
+        material="src:#industrieTekstuur2; repeat: 5 5"
+        shadow>
+      </a-plane>
+    </a-scene>
+  </body>
+</html>
+
+// material="src: #industrieTekstuur; repeat: 10 10"
